@@ -41,6 +41,13 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +62,11 @@
         <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
         <button id="addQuote">Add Quote</button>
     </div>
+
+    <select id="categoryFilter" onchange="filterQuotes()">
+        <option value="all">All Categories</option>
+        <!-- Dynamically populated categories -->
+    </select>
 
     <button id="exportButton">Export Quotes to JSON</button>
 
