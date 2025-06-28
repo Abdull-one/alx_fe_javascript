@@ -21,7 +21,8 @@
             margin-bottom: 20px;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        textarea {
             padding: 8px;
             margin-right: 10px;
             border: 1px solid #ddd;
@@ -36,6 +37,10 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -46,9 +51,15 @@
     <button id="newQuote">Show New Quote</button>
 
     <div id="newQuoteContainer">
-        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+        <textarea id="newQuoteText" placeholder="Enter a new quote" rows="4" cols="50"></textarea>
         <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
         <button id="addQuote">Add Quote</button>
+    </div>
+
+    <button id="exportButton">Export Quotes to JSON</button>
+
+    <div>
+        <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
     </div>
 
     <script src="script.js"></script>
